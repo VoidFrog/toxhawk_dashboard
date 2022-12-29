@@ -1,0 +1,29 @@
+.header-title {
+    margin: 8px 0px 8px 16px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4px;
+}
+
+.header-title div {
+    display:flex;
+}
+
+.header-title div span {
+    align-self: flex-end;
+}
+
+.product-name {
+    color:var(--header-title-color-product);
+    font-style: normal;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.product-type {
+    color:var(--header-title-color-type);
+    font-weight: 400;
+    font-size: 16px;
+    line-height:23px;
+}
