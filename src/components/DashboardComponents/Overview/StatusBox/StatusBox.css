@@ -1,5 +1,13 @@
-.statusbox-container {
-    width:30%;
-    height: 520px;
-    background-color:#1A1A1A;
+.status-box-container {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.status-box-container > div {
+    height: 50%;
+    border-radius: 12px;
+    background-color: #52525B;
 }

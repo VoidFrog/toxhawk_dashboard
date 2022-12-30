@@ -3,12 +3,13 @@ import './StatusBox.css'
 
 function StatusBox() {
   return (
-    <div className='statusbox-container'>
-        <div>
-            {/* samples here */}
+    <div className='status-box-container'>
+        <div className='status-box'>
+            {/* status box here (environment status) */}
+
         </div>
         <div>
-            {/* graph here */}
+            {/* map here */}
         </div>
     </div>
   )

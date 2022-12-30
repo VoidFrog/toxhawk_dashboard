@@ -21,7 +21,7 @@ function StatusBarItem(props:SensorStatus) {
   return (
     <div className='status-bar-item-container'>
       <div className='status-type-info'>
-        <img src={infoIcon} alt='description'/>
+      <img src={infoIcon} alt='description'/>
         <div className='type'>{type}</div>
       </div>
       <div style={{color:stateColor}} className='state'>{state}</div>

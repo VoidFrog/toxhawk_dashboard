@@ -1,0 +1,23 @@
+.sample-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    flex:1;
+    gap:8px;
+    margin-top:20px;
+    padding: 0px 25px 0px 25px;
+}
+
+.sample-container > div {
+    width:100%;
+}
+
+.container-row {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.center-text {
+    text-align: center;
+}

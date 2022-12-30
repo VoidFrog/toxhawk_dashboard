@@ -1,13 +1,48 @@
 import React from 'react'
 import './Timeline.css'
 
+import Sample from '../../../Sample/Sample'
+import SampleData from '../../../../dataModels/SampleData/SampleData'
+
 function Timeline() {
+  const makeSample = (airIndex:string, pollutants:{name:string, certainty:number}[]):SampleData => {
+    return {airIndex:airIndex, pollutants:pollutants}
+  }
+
+  let sample1 = makeSample('Good', [
+    {name:'Compound A', certainty:79},
+    {name:'Compound B', certainty:69},
+    {name:'Compound C', certainty:51}
+  ])
+  let sample2 = makeSample('Good', [
+    {name:'Compound A', certainty:79},
+    {name:'Compound B', certainty:69},
+    {name:'Compound C', certainty:51}
+  ])
+  let sample3 = makeSample('Good', [
+    {name:'Compound A', certainty:79},
+    {name:'Compound B', certainty:69},
+    {name:'Compound C', certainty:51}
+  ])
+
+  let lastSamples:SampleData[] = [sample1, sample2, sample3]; 
+
   return (
+
     <div className='timeline-container'>
-        <div>
+        <div className='sample-list-container'>
             {/* samples here */}
+            {
+              lastSamples.map((sample, index) => {
+                let props = {
+                  index:index,
+                  sample:sample
+                }
+                return <Sample key={index} {...props}/>
+              })
+            }
         </div>
-        <div>
+        <div className='graphs-container'>
             {/* graph here */}
         </div>
     </div>
