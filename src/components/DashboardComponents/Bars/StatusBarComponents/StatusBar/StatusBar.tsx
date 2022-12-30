@@ -2,7 +2,7 @@ import React from 'react'
 import './StatusBar.css'
 
 import StatusBarItem from '../StatusBarItem/StatusBarItem'
-import SensorStatus from '../../dataModels/SensorStatus/SensorStatus'
+import SensorStatus from '../../../../../dataModels/SensorStatus/SensorStatus'
 
 function StatusBar() {
   const createSensorStatus = (type:string, state:string, desc:string|undefined=undefined) => {

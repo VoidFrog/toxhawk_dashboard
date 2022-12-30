@@ -1,0 +1,12 @@
+.overview-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* width: 1510px; */
+    width:80%;
+    max-width: 1510px;
+    min-width: 1000px;
+    padding: 0px;
+    margin-top: 36px;
+    gap: 24px;
+}

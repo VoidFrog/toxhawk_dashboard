@@ -1,8 +1,8 @@
 import React from 'react'
 import './StatusBarItem.css'
-import infoIcon from '../../assets/info-icon.svg'
+import infoIcon from '../../../../../assets/info-icon.svg'
 
-import SensorStatus from '../../dataModels/SensorStatus/SensorStatus'
+import SensorStatus from '../../../../../dataModels/SensorStatus/SensorStatus'
 
 function StatusBarItem(props:SensorStatus) {
   const {type, state, description} = props
@@ -47,9 +47,9 @@ function determineStateType(
 function determineColor(type:string){
   let style = ''
 
-  if(type == 'ok') style += '#A3E635'
-  else if(type == 'neutral') style += '#FBBF24'
-  else if(type == 'warning') style += '#EF4444'
+  if(type === 'ok') style += '#A3E635'
+  else if(type === 'neutral') style += '#FBBF24'
+  else if(type === 'warning') style += '#EF4444'
   else style += '#F0F'
 
   return style

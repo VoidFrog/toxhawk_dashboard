@@ -14,11 +14,7 @@
     border-radius: 12px;
 }
 
-#status-items-rest {
+.control-bar-functions {
     display:flex;
     gap:24px;
-}
-
-.status-bar-container > div {
-    margin: 0 18px 0 18px;
 }

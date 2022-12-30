@@ -7,4 +7,5 @@ export default interface ButtonData {
     function:Function,
     width?:number,
     height?:number,
+    disabled?:boolean
 }
