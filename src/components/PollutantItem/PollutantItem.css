@@ -1,0 +1,16 @@
+.pollutant-item-container {
+    display:flex;
+    width:100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pollutant-item-container > div {
+    display:flex;
+    flex-direction: row;
+    gap:4px;
+}
+
+.pollutant-item-container > div * {
+    align-self: center;
+}

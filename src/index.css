@@ -24,3 +24,23 @@ html, body, #root {
 .disabled {
   opacity:0.5;
 }
+
+.size22 {
+  font-size: 22px;
+}
+
+.size20 {
+  font-size: 20px;
+}
+
+.size18 {
+  font-size: 18px;
+}
+
+.size16 {
+  font-size: 16px;
+}
+
+.gray-text {
+  color: #D4D4D8;
+}

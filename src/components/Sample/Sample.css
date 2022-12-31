@@ -9,7 +9,16 @@
 }
 
 .sample-container > div {
-    width:100%;
+    /* padding: 0px 30px 0 30px; */
+    min-width:165px;
+    max-width:220px;
+    width:90%;
+}
+
+.pollutant-list-container {
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .container-row {
@@ -20,4 +29,31 @@
 
 .center-text {
     text-align: center;
+}
+
+.center-content {
+    justify-content: center;
+    align-content: center;    
+}
+
+.sample-container > * {
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.size16 > div {
+    font-size: 16px;
+}
+
+.gray-text {
+    color: #D4D4D8;
+}
+
+.gray-text > div {
+    color: #D4D4D8;
+}
+
+.nowrap {
+    word-wrap: nowrap;
+    white-space: nowrap;
 }
