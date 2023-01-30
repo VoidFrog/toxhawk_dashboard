@@ -1,7 +1,8 @@
 import React from 'react'
 import './StatusBarItem.css'
-import infoIcon from '../../../../../assets/info-icon.svg'
+// import infoIcon from '../../../../../assets/info-icon.svg'
 
+import InfoIcon from '../../../../UI/InfoIcon/InfoIcon'
 import SensorStatus from '../../../../../dataModels/SensorStatus/SensorStatus'
 
 function StatusBarItem(props:SensorStatus) {
@@ -14,6 +15,12 @@ function StatusBarItem(props:SensorStatus) {
     ok:['Operational', 'Link']
   }
 
+  let info = {
+    title:type,
+    description:description !== undefined 
+      ? description
+      : '---'  
+  }
   
   let currentStateType = determineStateType(state, stateTypes)
   let stateColor = determineColor(currentStateType)
@@ -21,7 +28,8 @@ function StatusBarItem(props:SensorStatus) {
   return (
     <div className='status-bar-item-container'>
       <div className='status-type-info'>
-      <img src={infoIcon} alt='description'/>
+      {/* <img src={infoIcon} alt='description'/> */}
+      <InfoIcon {...info}/>
         <div className='type'>{type}</div>
       </div>
       <div style={{color:stateColor}} className='state'>{state}</div>
@@ -40,7 +48,7 @@ function determineStateType(
   if(stateTypes.warning.includes(state)) currentStateType = 'warning'
   else if(stateTypes.neutral.includes(state)) currentStateType = 'neutral'
   else if(stateTypes.ok.includes(state)) currentStateType = 'ok'
-  else currentStateType = 'ERR::undefined_behaviour'
+  else currentStateType = 'ERROR - undefined_behaviour'
   return currentStateType
 }
 

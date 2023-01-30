@@ -1,0 +1,25 @@
+.dropdown-container {
+    color:white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius:6px;
+    padding: 0px 12px 0px 12px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.title-option-container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 11px;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: block;
+}

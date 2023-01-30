@@ -8,6 +8,7 @@ html, body, #root {
 :root {
   --header-title-color-product:#FFFFFF;
   --header-title-color-type:#60A5FA;
+  --dark-gray:#27272A;
 }
 
 .unselectable {
@@ -39,6 +40,18 @@ html, body, #root {
 
 .size16 {
   font-size: 16px;
+}
+
+.fw700 {
+  font-weight: 700;
+}
+
+.fw600 {
+  font-weight: 600;
+}
+
+.fw500 {
+  font-weight: 500;
 }
 
 .gray-text {

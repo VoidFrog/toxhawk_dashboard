@@ -6,6 +6,14 @@ function Button(props:ButtonData) {
   let height = '32px'
   let width = '112px'
   let disabled = false
+
+  const getSize = (size:string) => {
+    let width = ''
+    if(size === 'small') width = '32px'
+    if(size === 'medium') width = '80px'
+    if(size === 'large') width = '112px'
+    return width
+  }
   
   if(props.size) width = getSize(props.size)
   if(props.width) width = `${props.width}px` 
@@ -20,14 +28,6 @@ function Button(props:ButtonData) {
   <div className='btn unselectable disabled' style={{width:width, height:height, backgroundColor:props.color}}>
       {props.title}
   </div>
-}
-
-function getSize(size:string){
-  let width = ''
-  if(size === 'small') width = '32px'
-  if(size === 'medium') width = '80px'
-  if(size === 'large') width = '112px'
-  return width
 }
 
 export default Button

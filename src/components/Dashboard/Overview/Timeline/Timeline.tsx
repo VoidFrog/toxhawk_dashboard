@@ -10,11 +10,11 @@ function Timeline() {
   }
 
   let sample1 = makeSample('Good', [
-    {name:'Compound A', certainty:79},
-    {name:'Compound B', certainty:69},
+    {name:'Compound A', certainty:49},
+    {name:'Compound B', certainty:62},
     {name:'Compound C', certainty:51}
   ])
-  let sample2 = makeSample('Good', [
+  let sample2 = makeSample('Neutral', [
     {name:'Compound A', certainty:79},
     {name:'Compound B', certainty:69},
     {name:'Compound C', certainty:51}

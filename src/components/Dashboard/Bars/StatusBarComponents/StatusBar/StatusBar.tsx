@@ -30,8 +30,8 @@ function StatusBar() {
       <div id='status-items-rest'>
       {
         items.map((status, index) => {
-          if(status.type == 'State') return
-          return <StatusBarItem key={index} {...status}/>
+          if(status.type === 'State') return null
+          else return <StatusBarItem key={index} {...status}/>
         })
       }
       </div>

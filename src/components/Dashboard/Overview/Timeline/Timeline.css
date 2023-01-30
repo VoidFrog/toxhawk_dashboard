@@ -6,11 +6,8 @@
     flex-direction: column;
 }
 
-.timeline-container > div {
-    flex:1
-}
-
 .sample-list-container {
+    flex: 0 0 50%;
     display:flex;
     padding-left: 25px;
     padding-right: 25px;
@@ -19,6 +16,7 @@
 }
 
 .graphs-container {
+    flex: 0 0 50%;
     background-color: #27272A;
     border-radius: 0 0 12px 12px;
 }

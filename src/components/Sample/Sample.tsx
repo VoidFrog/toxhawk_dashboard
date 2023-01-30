@@ -1,11 +1,32 @@
 import React from 'react'
 import './Sample.css'
+import Colors from '../UI/Colors/Colors'
 
 import PollutantItem from '../PollutantItem/PollutantItem'
 import SampleData from '../../dataModels/SampleData/SampleData'
 
 function Sample(props:{index:number, sample:SampleData}) {
   let { airIndex } = props.sample
+
+  const identifyAirQuality = (index:string):string => {
+    const states = {
+      good:['good'],
+      neutral:['neutral'],
+      bad:['bad']
+    }
+
+    let indx = index.toLowerCase()
+    let quality:string = states.good.includes(indx) 
+      ? Colors.lime
+      : states.neutral.includes(indx)
+      ? Colors.light_yellow
+      : states.bad.includes(indx)
+      ? Colors.red
+      : Colors.pink
+
+    return quality
+  }
+
   if (props.sample.loading){
     let time = props.sample.timeRemaining || 'unknown'
 
@@ -16,7 +37,6 @@ function Sample(props:{index:number, sample:SampleData}) {
       </div>
     )
   } 
-
   return (
     <div className='sample-container'>
       <div className='center-text size22'>{
@@ -26,7 +46,9 @@ function Sample(props:{index:number, sample:SampleData}) {
       }</div>
       <div className='container-row size16'>
         <div>Air index:</div>
-        <div>{airIndex}</div>
+        <div style={{color: identifyAirQuality(airIndex)}}>
+          {airIndex}
+        </div>
       </div>
       <div className='center-text size18 nowrap'>Detected pollutants:</div>
       <div className='container-row gray-text size16'>
@@ -37,7 +59,7 @@ function Sample(props:{index:number, sample:SampleData}) {
         {/* pollutants */}
         {
           props.sample.pollutants.map((pollutant, index) => {
-            return <PollutantItem key={index}/>
+            return <PollutantItem key={index} {...pollutant}/>
           })
         }
       </div>

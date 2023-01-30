@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import Header from '../components/Header/Header';
-import Dashboard from '../components/DashboardComponents/Dashboard/Dashboard';
+import Dashboard from '../components/Dashboard/Dashboard';
 
 import View from '../dataModels/View/View';
+import DataDisplay from '../components/DataDisplay/DataDisplay';
 
 
 function App() {
@@ -18,10 +19,13 @@ function App() {
 
   
   //TODO: conditional rendering -> (Dashboard  | Data | Settings)
+  //DONE
   return (
     <div className="App">
       <Header {...view}/>
-      <Dashboard/>
+      {view.current === 'Dashboard' && <Dashboard/>}
+      {view.current === 'Data' && <DataDisplay/>}
+      {view.current === 'Settings' && <Dashboard/>}
     </div>
   );
 }

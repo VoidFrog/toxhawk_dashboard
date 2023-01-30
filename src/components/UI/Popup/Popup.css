@@ -1,0 +1,42 @@
+.popup {
+    position: absolute;
+    left:0px;
+    top:0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup * {
+    color: #FFFFFF;
+}
+
+.popup-content {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 12px;
+    height:20%;
+    width:40%;
+    min-width: 400px;
+    opacity: 1;
+    background-color: var(--dark-gray);
+}
+
+.popup-info > div {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    height: 35%;
+}
+
+.description {
+    height: 65%;
+}

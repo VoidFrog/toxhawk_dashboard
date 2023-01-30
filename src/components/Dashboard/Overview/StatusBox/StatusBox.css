@@ -10,4 +10,17 @@
     height: 50%;
     border-radius: 12px;
     background-color: #52525B;
+    color: white;
+}
+
+.status-box > p { 
+    margin-top: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.data-quality-container {
+    display:flex;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
 }

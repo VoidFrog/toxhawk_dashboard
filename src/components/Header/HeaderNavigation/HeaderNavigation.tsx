@@ -1,14 +1,14 @@
 import React from 'react'
 import './HeaderNavigation.css'
 
-import View from '../../dataModels/View/View'
+import View from '../../../dataModels/View/View'
 
 function HeaderNavigation(view:View) {
   return highlightCurrentScreenName(view)
 }
 
 function highlightCurrentScreenName(view:View){
-  if(view.current == 'Dashboard'){
+  if(view.current === 'Dashboard'){
     return (
       <div className='header-navigation-container unselectable'>
         <div id='current-view' onClick={() => view.setView('Dashboard')}>
@@ -23,7 +23,7 @@ function highlightCurrentScreenName(view:View){
       </div>
     )
   }
-  else if(view.current == 'Data'){
+  else if(view.current === 'Data'){
     return (
       <div className='header-navigation-container unselectable'>
         <div onClick={() => view.setView('Dashboard')}>
