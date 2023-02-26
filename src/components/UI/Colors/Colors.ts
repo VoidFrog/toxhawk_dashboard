@@ -7,7 +7,8 @@ enum Colors {
     lime='#A3E635',
     light_yellow='#FBBF24',
     pink='#FF00FF',
-    white='#FFFFFF'
+    white='#FFFFFF',
+    gray='#27272A'
 }
 
 export default Colors

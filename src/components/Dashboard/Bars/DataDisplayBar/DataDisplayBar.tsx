@@ -21,7 +21,8 @@ function DataDisplayBar() {
   let btnsLeft = [btnStart, btnOneShot, btnStop]
 
   let options = ['All', 'Recent', 'Dangerous', 'option1', 'option2']
-  let severity = makeDropdownData('Severity', 'large', Colors.black, options)
+  let severityOptions = ['Toxic','Acute Toxicity', 'Severe Toxicity', 'Hazardous']
+  let severity = makeDropdownData('Severity', 'large', Colors.black, severityOptions)
   let pollutants = makeDropdownData('Pollutants', 'large', Colors.black, options)
   let timeframe = makeDropdownData('Timeframe', 'large', Colors.black, options)
 

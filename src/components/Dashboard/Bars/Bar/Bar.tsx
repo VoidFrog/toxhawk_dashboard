@@ -35,7 +35,7 @@ function Bar(props:{
         {
           props.left.map((item, index) => {
             if(isButtonData(item)) return <Button key={index} {...item}/>
-            else if(isDropdownData(item)) return <Dropdown {...item} />
+            else if(isDropdownData(item)) return <Dropdown key={index} {...item} />
             return null
           })
         }
@@ -44,7 +44,7 @@ function Bar(props:{
         {
           props.right.map((item, index) => {
             if(isButtonData(item)) return <Button key={index} {...item}/>
-            else if(isDropdownData(item)) return <Dropdown {...item} />
+            else if(isDropdownData(item)) return <Dropdown key={index} {...item} />
             return null
           })
         }

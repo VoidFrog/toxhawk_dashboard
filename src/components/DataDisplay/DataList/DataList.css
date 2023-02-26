@@ -1,0 +1,31 @@
+.data-list-container {
+    display: flex;
+    width:65%;
+    min-width: 800px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.data-list-titles {
+    display: flex;
+    height: 50px;
+    width:100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--dark-gray);
+    border-radius: 12px 12px 0px 0px;    
+    padding: 0px 10px;
+    gap: 20px;
+}
+
+.data-list-titles > div {
+    width:100%;
+}
+
+.data-list-titles > div > p {
+    color: white;
+}
+
