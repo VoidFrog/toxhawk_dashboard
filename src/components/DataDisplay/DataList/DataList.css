@@ -4,10 +4,11 @@
     min-width: 800px;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 0px 10px;
 }
 
+/*
 .data-list-titles {
     display: flex;
     height: 50px;
@@ -18,14 +19,55 @@
     background: var(--dark-gray);
     border-radius: 12px 12px 0px 0px;    
     padding: 0px 10px;
-    gap: 20px;
+    gap: 20px; 
+}
+*/
+
+.data-list-titles {
+    display: inline-grid;
+    grid-template-areas: 
+    /* 'a b b b c c c c c c d d e e f f f f'; */
+    'a b c d e f';
+    /* grid-auto-rows: auto; */
+    /* grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); */
+    grid-template-columns: 7fr 18fr 25fr 12fr 12fr 25fr;
+    height: 50px;
+    width:100%;
+    background-color: var(--dark-gray);
+    border-radius: 12px 12px 0px 0px;    
+    padding: 0px 10px;
+    /* gap: 20px; */
 }
 
 .data-list-titles > div {
-    width:100%;
+    /* width:100%; */
 }
 
 .data-list-titles > div > p {
     color: white;
+    text-align: left;
 }
 
+.data-list-grid-a {
+    grid-area: a;
+}
+
+.data-list-grid-b {
+    grid-area: b;
+}
+
+.data-list-grid-c {
+    grid-area: c;
+}
+
+.data-list-grid-d {
+    grid-area: d;
+}
+
+.data-list-grid-e {
+    grid-area: e;
+}
+
+.data-list-grid-f {
+    grid-area: f;
+}
