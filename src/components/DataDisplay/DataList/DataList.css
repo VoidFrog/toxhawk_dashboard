@@ -8,6 +8,10 @@
     padding: 0px 10px;
 }
 
+.data-list-container > div:last-child {
+    border-radius: 0px 0px 12px 12px;
+}
+
 /*
 .data-list-titles {
     display: flex;
@@ -37,10 +41,6 @@
     border-radius: 12px 12px 0px 0px;    
     padding: 0px 10px;
     /* gap: 20px; */
-}
-
-.data-list-titles > div {
-    /* width:100%; */
 }
 
 .data-list-titles > div > p {

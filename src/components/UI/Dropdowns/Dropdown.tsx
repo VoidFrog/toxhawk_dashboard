@@ -15,7 +15,7 @@ function Dropdown(props:DropdownData) {
   //   return width
   // }
   let height = '32px'
-  // let width = '112px'
+  let width = '112px'
   
   let [isExpanded, expand] = React.useState(false)
   let [selectedOption, selectOption] = React.useState(props.options[0])
@@ -29,6 +29,7 @@ function Dropdown(props:DropdownData) {
         ? '6px 6px 0px 0px'
         : '6px 6px 6px 6px',
         height:height,
+        // width:width,
         backgroundColor:props.color
         }}
         className='dropdown-container clickable unselectable'

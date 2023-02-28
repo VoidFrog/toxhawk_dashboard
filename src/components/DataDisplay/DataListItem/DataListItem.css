@@ -17,8 +17,6 @@
     align-items: center;
 }
 
-
-
 .data-list-item-container > div > p {
     color: white;
 }
@@ -49,5 +47,15 @@
 
 .data-list-item-grid-g {
     grid-area: g;
+}
+
+.hide-name-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    /* background: linear-gradient(90deg, #FFF 5%, transparent); */
+    background: linear-gradient(90deg, rgb(255, 255, 255) 75%,rgba(255, 255, 255, 0) 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #fff0;
 }
 
