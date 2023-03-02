@@ -6,9 +6,16 @@ import Colors from '../../UI/Colors/Colors'
 import Button from '../../UI/Buttons/Button'
 import ButtonData from '../../../dataModels/ButtonData/ButtonData'
 import TakenSampleData from '../../../dataModels/TakenSampleData/TakenSampleData'
+import Popup from '../../UI/Popup/Popup'
 
 export default function DataListItem(props:TakenSampleData) {
   let [isWideEnough, changeSize] = React.useState(window.innerWidth>1700 ? true : false)
+  let [isPopupShown, togglePopup] = React.useState(false)
+  let popupData = {
+    title: props.name, 
+    description: 'some description here about things',
+    closePopup: () => {togglePopup((prev) => !prev)}
+  }
 
   window.addEventListener('resize', ()=> {
     changeSize(window.innerWidth>1700 ? true : false)
@@ -20,7 +27,7 @@ export default function DataListItem(props:TakenSampleData) {
       ? 'large'
       : 'medium',
     color: Colors.blue,
-    function: () => console.log('details work')
+    function: () => togglePopup(prev => !prev)
   }
 
   return (
@@ -35,6 +42,7 @@ export default function DataListItem(props:TakenSampleData) {
       })}</p></div>
       <div className='fw600 size16 data-list-item-grid-f'><p>{props.timestamp}</p></div>
       <div className='data-list-item-grid-g'><Button {...btnData}/></div>
+      {isPopupShown && <Popup {...popupData}/>}
     </div>
   )
 }

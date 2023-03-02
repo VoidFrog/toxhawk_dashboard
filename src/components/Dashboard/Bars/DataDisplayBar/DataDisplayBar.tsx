@@ -14,7 +14,6 @@ function DataDisplayBar() {
     return {title:title, size:size, color:color, options:options}
   }
 
-
   let btnStart = createButtonData('View on map', ()=>console.log('viewing on map...'), 'large', Colors.blue)
   let btnOneShot = createButtonData('Export', ()=>console.log('Export in progress...'), 'large', Colors.green)
   let btnStop = createButtonData('Remove', ()=>console.log('Removing selected samples...'), 'large', Colors.red)
