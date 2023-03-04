@@ -7,6 +7,7 @@ import TakenSampleData, {createTakenSampleData} from '../../dataModels/TakenSamp
 
 function DataDisplay() {
   let [sampleList, setSampleList] = React.useState<TakenSampleData[]>([])
+  let [chosenSamples, setChosenSamples] = React.useState<Boolean[]>([])
 
   let sample1:TakenSampleData = createTakenSampleData('dangerous', ['WWA', 'bruh'], 694202137, {x:12, y:12}, 'gigachad-pekowice-001')
   let sample2:TakenSampleData = createTakenSampleData('dangerous', ['WWA', 'bruh'], 694202138, {x:12, y:12}, 'gigachad-pekowice-002')
@@ -14,15 +15,19 @@ function DataDisplay() {
   let sample4:TakenSampleData = createTakenSampleData('dangerous', ['WWA', 'bruh'], 694202140, {x:12, y:12}, 'gigachad-pekowice-004')
   let sample5:TakenSampleData = createTakenSampleData('dangerous', ['WWA', 'bruh'], 694202141, {x:12, y:12}, 'gigachad-pekowice-005')
   let samples = [sample1, sample2, sample3, sample4, sample5]
-  
+
   React.useEffect(() => {
     setSampleList([...samples])
+  }, [])
+
+  React.useEffect(() => {
+    setChosenSamples([...samples.map(s => false)])
   }, [])
 
   return (
     <div className='data-display-container'>
       <DataDisplayBar />
-      <DataList {...{samples:sampleList}}/>
+      <DataList {...{samples:sampleList, setChosenSamples:setChosenSamples, chosenSamples:chosenSamples}}/>
     </div>
   )
 }

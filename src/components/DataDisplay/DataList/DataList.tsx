@@ -4,7 +4,9 @@ import DataListItem from '../DataListItem/DataListItem'
 import TakenSampleData from '../../../dataModels/TakenSampleData/TakenSampleData'
 
 export default function DataList(props:{
-  samples:TakenSampleData[]
+  samples:TakenSampleData[],
+  chosenSamples:Boolean[],
+  setChosenSamples:Function
 }) {
   return (
     <div className='data-list-container unselectable'>
@@ -18,7 +20,7 @@ export default function DataList(props:{
       </div>
       {
         props.samples.map((takenSampleData, index) => {
-          return <DataListItem key={index} {...takenSampleData} />
+          return <DataListItem key={index} {...{takenSampleData:takenSampleData, setChosenSamples:props.setChosenSamples, chosenSamples:props.chosenSamples, index:index}} />
         })
       }
     </div>
