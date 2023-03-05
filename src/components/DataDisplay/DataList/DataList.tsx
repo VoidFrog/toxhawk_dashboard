@@ -6,7 +6,8 @@ import TakenSampleData from '../../../dataModels/TakenSampleData/TakenSampleData
 export default function DataList(props:{
   samples:TakenSampleData[],
   chosenSamples:Boolean[],
-  setChosenSamples:Function
+  setChosenSamples:Function,
+  pageNumber:number
 }) {
   return (
     <div className='data-list-container unselectable'>
@@ -20,7 +21,11 @@ export default function DataList(props:{
       </div>
       {
         props.samples.map((takenSampleData, index) => {
-          return <DataListItem key={index} {...{takenSampleData:takenSampleData, setChosenSamples:props.setChosenSamples, chosenSamples:props.chosenSamples, index:index}} />
+          let min = (props.pageNumber)*13
+          let max = (props.pageNumber+1)*13 - 1
+          if(index >= min && index <= max){
+            return <DataListItem key={index} {...{takenSampleData:takenSampleData, setChosenSamples:props.setChosenSamples, chosenSamples:props.chosenSamples, index:index}} />
+          }
         })
       }
     </div>
