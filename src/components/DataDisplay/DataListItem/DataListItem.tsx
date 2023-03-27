@@ -41,11 +41,15 @@ export default function DataListItem(props:{
     <div className='data-list-item-container'>
       <div className='fw600 size16 data-list-item-grid-a'>
         <input onChange={() => {
-          let arr = JSON.parse(JSON.stringify(props.chosenSamples))
-          arr[props.index] = !arr[props.index]
-          props.setChosenSamples(arr) 
-          console.log(`pronciuf100${props.index}`, props.chosenSamples[props.index])
-        }} checked={(props.chosenSamples[props.index])? true : false} className='checkbox clickable' type="checkbox"/>
+            let arr = JSON.parse(JSON.stringify(props.chosenSamples))
+            arr[props.index] = !arr[props.index]
+            props.setChosenSamples(arr) 
+            console.log(`pronciuf100${props.index}`, props.chosenSamples[props.index])
+          }} 
+          checked={(props.chosenSamples[props.index])? true : false} 
+          className='checkbox clickable'
+          type="checkbox"
+        />
       </div>
       <div className='hide-name-overflow fw600 size16 data-list-item-grid-b'><p>{props.takenSampleData.name}</p></div>
       <div className='data-list-item-grid-c'><img src={mapIcon} alt=""/></div>

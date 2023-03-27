@@ -13,7 +13,7 @@ function Popup(props:{
   }
 
   return (
-    <div className='popup' onClick={(e) => closeSelf(e)}>
+    <div className='popup unselectable' onClick={(e) => closeSelf(e)}>
       <div className='popup-content'>
         <div className='title fw700 size18'>
           <p>{props.title}</p>

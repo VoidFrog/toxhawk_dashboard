@@ -1,15 +1,5 @@
-.bar-container {
-    display: flex;
-    height: 50px;
-    /* width:1200px; */
-    width:65%;
-    min-width: 800px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 10px;
-    margin-top: 25px;
-    gap: 24px;
-    background: #52525B;
-    border-radius: 12px;
-}
+.active-filters-container {
+    padding-bottom:35px;
+    margin-top: -92px;
+    margin-right: min(-820px, calc(-66.4%));
+} 

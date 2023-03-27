@@ -15,13 +15,10 @@ function Dropdown(props:DropdownData) {
   //   return width
   // }
   let height = '32px'
-  let width = '112px'
+  // let width = '112px'
   
   let [isExpanded, expand] = React.useState(false)
   let [selectedOption, selectOption] = React.useState(props.options[0])
-  const makeNonWrappable = (option:string) => {
-    return option.replaceAll(' ', '\u00A0')
-  }
 
   return (
       <div style={{
@@ -35,10 +32,10 @@ function Dropdown(props:DropdownData) {
         className='dropdown-container clickable unselectable'
         onClick={() => expand(prev => !prev)}
         >
-        <div className='title-option-container'>
-          <p>{props.title}:{'\u00A0'}{
-            makeNonWrappable(selectedOption)
-          }</p>
+        <div className='title-option-container hide-option-overflow'>
+          <p>{props.title}
+          {/*: {selectedOption} */}
+          </p>
           {
             isExpanded 
               ? <img src={arrowUp} alt='description'/>
@@ -58,7 +55,7 @@ function Dropdown(props:DropdownData) {
                   : '0px'
                 }}
                 className='unselectable clickable'
-                onClick={() => {selectOption(option)}}>
+                onClick={() => selectOption(option)}>
                 {option}</div>
             })
           }

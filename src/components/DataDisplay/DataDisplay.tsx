@@ -12,7 +12,7 @@ function DataDisplay() {
   let [currentPage, changePage] = React.useState(0)
 
   let samples:TakenSampleData[] = []
-  for (let i=0; i<40; i++){
+  for (let i=0; i<52; i++){
     let sample:TakenSampleData = createTakenSampleData('dangerous', ['WWA', 'bruh'], 694202137+i, {x:12, y:12}, 'gigachad-pekowice-001')
     samples.push(sample)
   }

@@ -6,6 +6,8 @@ import Bar from '../Bar/Bar'
 import ButtonData from '../../../../dataModels/ButtonData/ButtonData'
 import DropdownData from '../../../../dataModels/DropdownData/DropdownData'
 import TakenSampleData from '../../../../dataModels/TakenSampleData/TakenSampleData'
+import Button from '../../../UI/Buttons/Button'
+import InfoIcon from '../../../UI/InfoIcon/InfoIcon'
 
 function DataDisplayBar(props:{
   sampleList:TakenSampleData[],
@@ -57,8 +59,18 @@ function DataDisplayBar(props:{
 
   let dropdownsRight = [severity, pollutants, timeframe]
 
+  let btnShowActiveFilters = {
+    title:'Active Filters',
+    description: `active filters...`
+  }
+
   return (
-    <Bar {...{left:btnsLeft, right:dropdownsRight}}/>
+    <>
+      <Bar {...{left:btnsLeft, right:dropdownsRight}}/>
+      <div className='active-filters-container unselectable'>
+        <InfoIcon {...btnShowActiveFilters}/>
+      </div>
+    </>
   )
 }
 
