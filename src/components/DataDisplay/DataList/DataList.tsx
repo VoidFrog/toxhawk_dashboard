@@ -26,6 +26,7 @@ export default function DataList(props:{
           if(index >= min && index <= max){
             return <DataListItem key={index} {...{takenSampleData:takenSampleData, setChosenSamples:props.setChosenSamples, chosenSamples:props.chosenSamples, index:index}} />
           }
+          return false
         })
       }
     </div>

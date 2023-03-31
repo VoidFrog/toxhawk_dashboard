@@ -10,7 +10,7 @@ function Pagination(props:{
   pageNumber:number,
   changePage:Function
 }) {
-  let pageCount:number = Math.floor(props.sampleCount / 13)
+  let pageCount:number = Math.ceil(props.sampleCount / 13)
 
   let btnPrev:ButtonData = createButtonData('Prev', 'medium', Colors.black, () => {
     let prevPage = (props.pageNumber > 0) ? props.pageNumber-1 : props.pageNumber 

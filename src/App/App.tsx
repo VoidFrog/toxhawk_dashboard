@@ -2,10 +2,10 @@ import React from 'react';
 import './App.css';
 import Header from '../components/Header/Header';
 import Dashboard from '../components/Dashboard/Dashboard';
-
 import View from '../dataModels/View/View';
 import DataDisplay from '../components/DataDisplay/DataDisplay';
 
+import SampleData, { makeSampleData } from '../dataModels/SampleData/SampleData';
 
 function App() {
   let [currentView, setCurrentView] = React.useState('Dashboard')
@@ -16,16 +16,32 @@ function App() {
     current:currentView,
     setView:setCurrentView
   }
-
   
-  //TODO: conditional rendering -> (Dashboard  | Data | Settings)
-  //DONE
+  //data needs to be collected on this level, and passed down to components which need it
+  let sample1 = makeSampleData('Good', [
+    {name:'Compound A', certainty:49},
+    {name:'Compound B', certainty:62},
+    {name:'Compound C', certainty:51}
+  ])
+  let sample2 = makeSampleData('Neutral', [
+    {name:'Compound A', certainty:79},
+    {name:'Compound B', certainty:69},
+    {name:'Compound C', certainty:51}
+  ])
+  let sample3 = makeSampleData('Good', [
+    {name:'Compound A', certainty:79},
+    {name:'Compound B', certainty:69},
+    {name:'Compound C', certainty:51}
+  ], true, 10)
+
+  let lastSamples:SampleData[] = [sample1, sample2, sample3];
+
   return (
     <div className="App">
       <Header {...view}/>
-      {view.current === 'Dashboard' && <Dashboard/>}
-      {view.current === 'Data' && <DataDisplay/>}
-      {view.current === 'Settings' && <Dashboard/>}
+      {view.current === 'Dashboard' && <Dashboard {...{lastSamples:lastSamples}}/>}
+      {view.current === 'Data' && <DataDisplay {...{samples:lastSamples}}/>}
+      {view.current === 'Settings' && <Dashboard {...{lastSamples:lastSamples}}/>}{/*there are no setting yet*/}
     </div>
   );
 }

@@ -3,11 +3,14 @@ import './Overview.css'
 
 import Timeline from './Timeline/Timeline'
 import StatusBox from './StatusBox/StatusBox'
+import SampleData from '../../../dataModels/SampleData/SampleData'
 
-function Overview() {
+function Overview(props:{
+  samples:SampleData[]
+}) {
   return (
     <div className='overview-container unselectable'>
-        <Timeline />
+        <Timeline {...{samples:props.samples}}/>
         <StatusBox />
     </div>
   )

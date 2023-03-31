@@ -42,7 +42,9 @@ function Sample(props:{index:number, sample:SampleData}) {
       <div className='center-text size22'>{
         props.index === 0
           ? 'Last Sample' 
-          : 'Current Sample'
+          : (props.index === 1) 
+          ? 'Current Sample'
+          : 'Sample Details'
       }</div>
       <div className='container-row size16'>
         <div>Air index:</div>

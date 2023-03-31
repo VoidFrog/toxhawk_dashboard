@@ -1,7 +1,8 @@
 .pagination-container {
     display: flex;
     flex-direction: row;
+    position:fixed;
     gap: 8px;
-    margin-top: -16px;
-    margin-bottom: 32px;
+    /* margin-top: -16px; */
+    bottom: 48px;
 }

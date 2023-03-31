@@ -8,3 +8,23 @@ export default interface SampleData {
     loading?:boolean
     timeRemaining?:number
 }
+
+const makeSampleData = (
+    airIndex:string,
+    pollutants:{
+        name:string,
+        certainty:number
+    }[],
+    loading?:boolean,
+    timeRemaining?:number
+):SampleData => {
+    let sample = {
+        airIndex:airIndex,
+        pollutants:pollutants,
+        loading:loading,
+        timeRemaining:timeRemaining
+    }
+    return sample
+}
+
+export { makeSampleData }

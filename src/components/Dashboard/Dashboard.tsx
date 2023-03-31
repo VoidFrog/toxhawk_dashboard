@@ -4,12 +4,16 @@ import StatusBar from './Bars/StatusBarComponents/StatusBar/StatusBar'
 import ControlBar from './Bars/ControlBar/ControlBar'
 import Overview from './Overview/Overview'
 
-function Dashboard() {
+import SampleData from '../../dataModels/SampleData/SampleData'
+
+function Dashboard(props:{
+  lastSamples:SampleData[]
+}) {
   return (
     <div className='dashboard-container'>
       <StatusBar />
       <ControlBar />
-      <Overview />
+      <Overview {...{samples:props.lastSamples}}/>
     </div>
   )
 }
