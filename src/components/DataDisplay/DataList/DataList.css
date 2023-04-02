@@ -8,40 +8,22 @@
     padding: 0px 10px;
 }
 
-.data-list-container > div:last-child {
-    border-radius: 0px 0px 12px 12px;
-}
-
-/*
-.data-list-titles {
-    display: flex;
-    height: 50px;
-    width:100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--dark-gray);
-    border-radius: 12px 12px 0px 0px;    
-    padding: 0px 10px;
-    gap: 20px; 
-}
-*/
-
 .data-list-titles {
     display: inline-grid;
     grid-template-areas: 
-    /* 'a b b b c c c c c c d d e e f f f f'; */
     'a b c d e f';
-    /* grid-auto-rows: auto; */
-    /* grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); */
     grid-template-columns: 7fr 18fr 25fr 12fr 12fr 25fr;
     height: 50px;
     width:100%;
     background-color: var(--dark-gray);
-    border-radius: 12px 12px 0px 0px;    
+    border-radius: 12px 12px 0px 0px !important;
     padding: 0px 10px;
-    /* gap: 20px; */
 }
+
+.data-list-container > div:last-child {
+    border-radius: 0px 0px 12px 12px;
+}
+
 
 .data-list-titles > div > p {
     color: white;

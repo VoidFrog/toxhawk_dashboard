@@ -4,9 +4,8 @@ import mapIcon from '../../../assets/map-icon.svg'
 
 import Colors from '../../UI/Colors/Colors'
 import Button from '../../UI/Buttons/Button'
-import ButtonData from '../../../dataModels/ButtonData/ButtonData'
+import ButtonData, { makeButtonData } from '../../../dataModels/ButtonData/ButtonData'
 import TakenSampleData from '../../../dataModels/TakenSampleData/TakenSampleData'
-import Popup from '../../UI/Popup/Popup'
 import SampleDetails from '../../UI/SampleDetails/SampleDetails'
 
 export default function DataListItem(props:{
@@ -20,27 +19,16 @@ export default function DataListItem(props:{
   let [isPopupShown, togglePopup] = React.useState(false)
   const closePopup = () => togglePopup((prev) => !prev)
 
-
-  // let popupData = {
-  //   title: props.takenSampleData.name, 
-  //   description: 'some description here about things',
-  //   closePopup: () => {togglePopup((prev) => !prev)}
-  // }
-
   window.addEventListener('resize', ()=> {
     changeSize(window.innerWidth>1700 ? true : false)
   })
 
-  let btnData:ButtonData = {
-    title: 'Details',
-    size: isWideEnough
-      ? 'large'
-      : 'medium',
-    color: Colors.blue,
-    function: () => togglePopup(prev => !prev)
-  }
-
-  console.log('pussy', props.takenSampleData)
+  let btnData:ButtonData = makeButtonData('Details', isWideEnough
+    ? 'large'
+    : 'medium',
+    Colors.blue,
+    () => togglePopup(prev => !prev)
+  )
 
   return (
     <div className='data-list-item-container'>

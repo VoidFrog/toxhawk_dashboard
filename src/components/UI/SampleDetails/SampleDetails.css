@@ -7,7 +7,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
@@ -17,17 +17,16 @@
 
 .sample-details-container-content {
     box-sizing: border-box;
-    position:relative;
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-radius: 12px;
     min-width: 880px;
     max-width: 1500px;
     width:85%;
     height: 660px;
     opacity: 1;
     background-color: #3f3f46;
+    border-radius: 12px;
     gap: 24px;
     padding: 12px 12px;
 }

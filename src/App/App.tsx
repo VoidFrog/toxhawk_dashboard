@@ -41,7 +41,10 @@ function App() {
       <Header {...view}/>
       {view.current === 'Dashboard' && <Dashboard {...{lastSamples:lastSamples}}/>}
       {view.current === 'Data' && <DataDisplay {...{samples:lastSamples}}/>}
-      {view.current === 'Settings' && <Dashboard {...{lastSamples:lastSamples}}/>}{/*there are no setting yet*/}
+      {view.current === 'Settings' 
+      &&<div style={{display:'flex', alignItems:'center', height:'90%', justifyContent:'center', color:'white'}}>
+          <div className='unselectable fw700 size22'>coming soon...</div>
+        </div>}{/*there are no setting yet*/}
     </div>
   );
 }

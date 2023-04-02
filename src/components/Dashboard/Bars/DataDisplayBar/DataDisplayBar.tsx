@@ -3,25 +3,20 @@ import './DataDisplayBar.css'
 
 import Colors from '../../../UI/Colors/Colors'
 import Bar from '../Bar/Bar'
-import ButtonData from '../../../../dataModels/ButtonData/ButtonData'
-import DropdownData from '../../../../dataModels/DropdownData/DropdownData'
+import { makeButtonData } from '../../../../dataModels/ButtonData/ButtonData'
+import DropdownData, { makeDropdownData } from '../../../../dataModels/DropdownData/DropdownData'
 import TakenSampleData from '../../../../dataModels/TakenSampleData/TakenSampleData'
-import Button from '../../../UI/Buttons/Button'
 import InfoIcon from '../../../UI/InfoIcon/InfoIcon'
 
 function DataDisplayBar(props:{
   sampleList:TakenSampleData[],
   chosenSamples:Boolean[],
   setSampleList:Function, 
-  setChosenSamples:Function
+  setChosenSamples:Function,
+  pageNumber:number,
+  changePage:Function,
+  recordsOnPage:number
 }) {
-  const createButtonData = (title:string, fn:Function, size:string, color:Colors, disabled:boolean=false):ButtonData => {
-    return { title:title, function:fn, size:size, color:color, disabled:disabled }
-  }
-  const createDropdownData = (title:string, size:string, color:Colors, options:string[]):DropdownData => {
-    return {title:title, size:size, color:color, options:options}
-  }
-
   const deleteSamples = () => {
     const deleteSingleSample = (index:number, sampleArr:TakenSampleData[], chosenSampleArr:Boolean[]) => {
       sampleArr.splice(index, 1)
@@ -30,34 +25,39 @@ function DataDisplayBar(props:{
 
     let representation:Boolean[] = JSON.parse(JSON.stringify(props.chosenSamples))
     let indexes:number[] = representation.map(bool => (bool) ? 1 : 0)
-    console.log('indexy => ', indexes)
+    // console.log('indexy => ', indexes)
 
     let sampleArr = JSON.parse(JSON.stringify(props.sampleList))
     let chosenSampleArr = JSON.parse(JSON.stringify(props.chosenSamples))
 
     for (let i=indexes.length-1; i>=0; i--){
-      console.log('indexy: ', i, indexes[i])
+      // console.log('indexy: ', i, indexes[i])
       if(indexes[i] === 1) deleteSingleSample(i, sampleArr, chosenSampleArr)
     }
+
+    let pageCount:number = Math.ceil(sampleArr.length / props.recordsOnPage)
+    if(pageCount < props.pageNumber+1 && sampleArr.length > 0) props.changePage(props.pageNumber-1)
+    // console.log(pageCount, props.pageNumber+1, 'well ummm')
+
     props.setSampleList(sampleArr)
     props.setChosenSamples(chosenSampleArr)
   } 
 
-  let btnViewOnMap = createButtonData('View on map', () => console.log('viewing on map...'), 'large', Colors.blue)
-  let btnExport = createButtonData('Export', () => console.log('Export in progress...'), 'large', Colors.green)
-  let btnRemove = createButtonData('Remove', () => {
+  let btnViewOnMap = makeButtonData('View on map', 'large', Colors.blue, () => console.log('viewing on map...'))
+  let btnExport = makeButtonData('Export', 'large', Colors.green, () => console.log('Export in progress...'))
+  let btnRemove = makeButtonData('Remove', 'large', Colors.red, () => {
     deleteSamples()
     console.log('Removing selected samples...')
-  }, 'large', Colors.red)
+  })
   let btnsLeft = [btnViewOnMap, btnExport, btnRemove]
 
   let options = ['All', 'Recent', 'Dangerous', 'option1', 'option2']
   let severityOptions = ['Toxic','Acute Toxicity', 'Severe Toxicity', 'Hazardous']
-  let severity = createDropdownData('Severity', 'large', Colors.black, severityOptions)
-  let pollutants = createDropdownData('Pollutants', 'large', Colors.black, options)
-  let timeframe = createDropdownData('Timeframe', 'large', Colors.black, options)
+  let severity:DropdownData = makeDropdownData('Severity', 'large', Colors.black, severityOptions)
+  let pollutants:DropdownData = makeDropdownData('Pollutants', 'large', Colors.black, options)
+  let timeframe:DropdownData = makeDropdownData('Timeframe', 'large', Colors.black, options)
 
-  let dropdownsRight = [severity, pollutants, timeframe]
+  let dropdownsRight:DropdownData[] = [severity, pollutants, timeframe]
 
   let btnShowActiveFilters = {
     title:'Active Filters',

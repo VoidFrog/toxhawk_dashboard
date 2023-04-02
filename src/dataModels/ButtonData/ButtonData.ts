@@ -10,23 +10,23 @@ export default interface ButtonData {
     disabled?:boolean
 }
 
-export const createButtonData = (
+export const makeButtonData = (
     title:string,
     size:string,
     color:Colors,
-    fun:Function,
+    fn:Function,
+    disabled?:boolean,
     width?:number,
     height?:number,
-    disabled?:boolean
     ) => {
         let buttonData:ButtonData = {
             title:title,
             size:size,
             color:color,
-            function:fun
+            function:fn
         }
+        if (disabled) buttonData.disabled = disabled
         if (width) buttonData.width = width
         if (height) buttonData.height = height
-        if (disabled) buttonData.disabled = disabled
         return buttonData
 }

@@ -14,6 +14,7 @@ function DataDisplay(props:{
   let [sampleList, setSampleList] = React.useState<TakenSampleData[]>([])
   let [chosenSamples, setChosenSamples] = React.useState<Boolean[]>([])
   let [currentPage, changePage] = React.useState(0)
+  let [recordsCountOnPage, setRecordsCount] = React.useState(13)
 
   let samples:TakenSampleData[] = []
   for (let i=0; i<52; i++){
@@ -33,9 +34,9 @@ function DataDisplay(props:{
 
   return (
     <div className='data-display-container'>
-      <DataDisplayBar {...{chosenSamples, sampleList, setSampleList, setChosenSamples}}/>
+      <DataDisplayBar {...{chosenSamples, sampleList, setSampleList, setChosenSamples, pageNumber:currentPage, changePage, recordsOnPage:recordsCountOnPage}}/>
       <DataList {...{samples:sampleList, setChosenSamples:setChosenSamples, chosenSamples:chosenSamples, pageNumber:currentPage}}/>
-      <Pagination {...{sampleCount:sampleList.length, pageNumber:currentPage, changePage:changePage}}/>
+      <Pagination {...{sampleCount:sampleList.length, pageNumber:currentPage, changePage:changePage, recordsOnPage:recordsCountOnPage}}/>
     </div>
   )
 }
